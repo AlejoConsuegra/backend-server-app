@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken');
 const SEED = require('../config/config').SEED;
 
-
 //========================================
 //Verificar token
 //========================================

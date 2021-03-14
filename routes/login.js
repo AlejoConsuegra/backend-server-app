@@ -3,6 +3,8 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const SEED = require('../config/config').SEED;
 
+
+
 let app = express();
 
 let Usuario = require('../models/usuario')
