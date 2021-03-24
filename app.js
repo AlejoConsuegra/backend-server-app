@@ -26,12 +26,24 @@ let medicoRoutes = require('./routes/medico');
 let busquedaRoutes = require('./routes/busqueda');
 let uploadRoutes = require('./routes/upload');
 let imagenesRoutes = require('./routes/imagenes');
-
+// const db = 'mongodb://app:zdNSgaJvP39bY21a@appdatab-shard-00-01.lmrov.mongodb.net:27017/hospitalDB?ssl=true&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1&3t.uriVersion=3&3t.connection.name=atlas-dscjhz-shard-';
 
 // Conexión a la base de datos
 
-mongoose.connection.openUri('mongodb://app:12345@appdatab-shard-00-01.lmrov.mongodb.net:27017/hospitalDB?ssl=true&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1&3t.uriVersion=3&3t.connection.name=atlas-dscjhz-shard-', { useNewUrlParser: true, useUnifiedTopology: true }, (err, res) => {
+// mongoose
+//     .connect(db, {
+//         useNewUrlParser: true,
+//         useCreateIndex: true,
+//         useFindAndModify: false,
+//         useUnifiedTopology: true
+//     })
+//     .then(() => console.log('MongoDB connected...'))
+//     .catch(err => console.log(err));
 
+
+
+
+mongoose.connection.openUri('mongodb://app1:M3KpgWSGFtdOHJ1q@appdatab-shard-00-02.lmrov.mongodb.net:27017/hospitalDB?ssl=true&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1', { useNewUrlParser: true, useUnifiedTopology: true }, (err, res) => {
     try {
         console.log('Base de datos: \x1b[32m%s\x1b[0m', 'online');
 
@@ -40,12 +52,11 @@ mongoose.connection.openUri('mongodb://app:12345@appdatab-shard-00-01.lmrov.mong
         throw new Error('Error a la hora de iniciar la base de datos');
     }
 
+
+
+
 });
 
-//Sever index config
-// let serveIndex = require('serve-index');
-// app.use(express.static(__dirname + '/'))
-// app.use('/upload', serveIndex(__dirname + '/upload'));
 
 
 //Rutas
